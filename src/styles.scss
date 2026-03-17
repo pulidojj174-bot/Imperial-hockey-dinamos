@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@use '../public/assets/styles/root';
+@use '../public/assets/styles/mixins';
+@use '../public/assets/styles/variables';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+/* Aplicar box-sizing para que el padding y border no sumen ancho */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Prevenir que las imágenes se desborden */
+img {
+    max-width: 100%;
+    height: auto;
+}

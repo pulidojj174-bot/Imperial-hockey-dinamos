@@ -1,0 +1,20 @@
+@use '../../../../../public/assets/styles/variables' as v;
+@use '../../../../../public/assets/styles/mixins' as m;
+
+.footer-brand {
+  &__name {
+    font-family: v.$font-family-primary;
+    font-size: v.$font-size-subtitle;
+    color: v.color(accent);
+    margin: 0 0 v.$spacing-sm;
+  }
+
+  &__description {
+    font-family: v.$font-family-secondary;
+    font-size: v.$font-size-sm;
+    color: v.color(text-muted);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 280px;
+  }
+}

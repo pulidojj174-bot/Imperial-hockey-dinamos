@@ -1,0 +1,30 @@
+<footer class="footer" role="contentinfo">
+  <div class="footer__container">
+    <div class="footer__top">
+      <div class="footer__col footer__col--brand">
+        <app-footer-brand />
+      </div>
+
+      <div class="footer__col">
+        <app-footer-nav title="Club" [links]="clubLinks" />
+      </div>
+
+      <div class="footer__col">
+        <app-footer-nav title="Información" [links]="infoLinks" />
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__social-title">Síguenos</h3>
+        <app-footer-social [links]="socialLinks" />
+      </div>
+    </div>
+
+    <hr class="footer__divider" />
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">
+        &copy; {{ currentYear }} Imperial Hockey Dinamos. Todos los derechos reservados.
+      </p>
+    </div>
+  </div>
+</footer>

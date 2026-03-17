@@ -1,0 +1,26 @@
+<div class="footer-social">
+  <ul class="footer-social__list">
+    @for (link of links(); track link.name) {
+      <li class="footer-social__item">
+        <a
+          class="footer-social__link"
+          [href]="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="link.ariaLabel"
+        >
+          <svg
+            class="footer-social__icon"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+            width="24"
+            height="24"
+          >
+            <path [attr.d]="link.icon" />
+          </svg>
+        </a>
+      </li>
+    }
+  </ul>
+</div>

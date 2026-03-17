@@ -1,0 +1,10 @@
+<nav class="footer-nav" [attr.aria-label]="title()">
+  <h3 class="footer-nav__title">{{ title() }}</h3>
+  <ul class="footer-nav__list">
+    @for (link of links(); track link.route) {
+      <li class="footer-nav__item">
+        <a class="footer-nav__link" [routerLink]="link.route">{{ link.label }}</a>
+      </li>
+    }
+  </ul>
+</nav>

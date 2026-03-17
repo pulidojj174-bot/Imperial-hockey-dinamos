@@ -1,116 +1,75 @@
 import { Routes } from '@angular/router';
-import { Home } from './home/home';
-import { LayoutHome } from './layot/layout-home/layout-home';
-import { Project } from './project/project';
-import { Contact } from './contact/contact';
-import { About } from './about/about';
-import { Category } from './category/category';
 
 export const pagesRoutes: Routes = [
   {
     path: '',
-    component: LayoutHome,
+    loadComponent: () => import('./layout/layout-home/layout-home').then(m => m.LayoutHome),
     children: [
       {
         path: '',
-        component: Home,
+        loadComponent: () => import('./home/home').then(m => m.Home),
         data: {
-          title: 'Inicio | Senova',
+          title: 'Inicio | Imperial Hockey Dinamos',
           description:
-            'Bienvenido a Senova, tu plataforma de gestión de proyectos y tareas. Organiza tu trabajo de manera eficiente y colabora con tu equipo en tiempo real.',
-          keywords: 'Senova, gestión de proyectos, tareas, colaboración, productividad',
-          ogTitle: 'Inicio | Senova',
+            'Bienvenido a Imperial Hockey Dinamos, tu club de hockey sobre hielo. Descubre nuestros equipos, eventos y más.',
+          keywords: 'Imperial Hockey Dinamos, hockey, club deportivo',
+          ogTitle: 'Inicio | Imperial Hockey Dinamos',
           ogDescription:
-            'Bienvenido a Senova, tu plataforma de gestión de proyectos y tareas. Organiza tu trabajo de manera eficiente y colabora con tu equipo en tiempo real.',
-          ogImage: 'https://senova.com/assets/images/og-image.png',
-          ogUrl: 'https://senova.com/',
-          twitterTitle: 'Inicio | Senova',
-          twitterDescription:
-            'Bienvenido a Senova, tu plataforma de gestión de proyectos y tareas. Organiza tu trabajo de manera eficiente y colabora con tu equipo en tiempo real.',
-          twitterImage: 'https://senova.com/assets/images/twitter-image.png',
-          twitterUrl: 'https://senova.com/',
+            'Bienvenido a Imperial Hockey Dinamos, tu club de hockey sobre hielo. Descubre nuestros equipos, eventos y más.',
         },
       },
       {
-        path: 'projectos',
-        component: Project,
+        path: 'proyectos',
+        loadComponent: () => import('./project/project').then(m => m.Project),
         data: {
-          title: 'Proyectos | Senova',
+          title: 'Proyectos | Imperial Hockey Dinamos',
           description:
-            'Explora nuestros proyectos destacados en Senova. Descubre cómo nuestras soluciones innovadoras pueden ayudarte a gestionar tus proyectos de manera eficiente y alcanzar el éxito.',
-          keywords: 'Senova, proyectos, gestión de proyectos, soluciones innovadoras, éxito',
-          ogTitle: 'Proyectos | Senova',
+            'Explora nuestros proyectos destacados en Imperial Hockey Dinamos.',
+          keywords: 'Imperial Hockey Dinamos, proyectos, iniciativas',
+          ogTitle: 'Proyectos | Imperial Hockey Dinamos',
           ogDescription:
-            'Explora nuestros proyectos destacados en Senova. Descubre cómo nuestras soluciones innovadoras pueden ayudarte a gestionar tus proyectos de manera eficiente y alcanzar el éxito.',
-          ogImage: 'https://senova.com/assets/images/og-projects.png',
-          ogUrl: 'https://senova.com/proyectos',
-          twitterTitle: 'Proyectos | Senova',
-          twitterDescription:
-            'Explora nuestros proyectos destacados en Senova. Descubre cómo nuestras soluciones innovadoras pueden ayudarte a gestionar tus proyectos de manera eficiente y alcanzar el éxito.',
-          twitterImage: 'https://senova.com/assets/images/twitter-projects.png',
-          twitterUrl: 'https://senova.com/proyectos',
-        }
+            'Explora nuestros proyectos destacados en Imperial Hockey Dinamos.',
+        },
       },
       {
         path: 'contacto',
-        component: Contact,
+        loadComponent: () => import('./contact/contact').then(m => m.Contact),
         data: {
-          title: 'Contacto | Senova',
+          title: 'Contacto | Imperial Hockey Dinamos',
           description:
-            '¿Tienes preguntas o necesitas más información sobre Senova? Contáctanos hoy mismo y nuestro equipo estará encantado de ayudarte. Estamos aquí para brindarte el soporte que necesitas.',
-          keywords: 'Senova, contacto, preguntas, información, soporte',
-          ogTitle: 'Contacto | Senova',
+            '¿Tienes preguntas o necesitas más información? Contáctanos y nuestro equipo estará encantado de ayudarte.',
+          keywords: 'Imperial Hockey Dinamos, contacto, información, soporte',
+          ogTitle: 'Contacto | Imperial Hockey Dinamos',
           ogDescription:
-            '¿Tienes preguntas o necesitas más información sobre Senova? Contáctanos hoy mismo y nuestro equipo estará encantado de ayudarte. Estamos aquí para brindarte el soporte que necesitas.',
-          ogImage: 'https://senova.com/assets/images/og-contact.png',
-          ogUrl: 'https://senova.com/contacto',
-          twitterTitle: 'Contacto | Senova',
-          twitterDescription:
-            '¿Tienes preguntas o necesitas más información sobre Senova? Contáctanos hoy mismo y nuestro equipo estará encantado de ayudarte. Estamos aquí para brindarte el soporte que necesitas.',
-          twitterImage: 'https://senova.com/assets/images/twitter-contact.png',
-          twitterUrl: 'https://senova.com/contacto',
-        }
+            '¿Tienes preguntas o necesitas más información? Contáctanos y nuestro equipo estará encantado de ayudarte.',
+        },
       },
       {
         path: 'nosotros',
-        component: About,
+        loadComponent: () => import('./about/about').then(m => m.About),
         data: {
-          title: 'Nosotros | Senova',
+          title: 'Nosotros | Imperial Hockey Dinamos',
           description:
-            'Conoce más sobre Senova, nuestra misión, visión y valores. Descubre cómo estamos comprometidos en ofrecer soluciones innovadoras para la gestión de proyectos y tareas, ayudando a nuestros clientes a alcanzar el éxito.',
-          keywords: 'Senova, nosotros, misión, visión, valores, soluciones innovadoras, gestión de proyectos',
-          ogTitle: 'Nosotros | Senova',
+            'Conoce más sobre Imperial Hockey Dinamos, nuestra misión, visión y valores.',
+          keywords: 'Imperial Hockey Dinamos, nosotros, misión, visión, valores',
+          ogTitle: 'Nosotros | Imperial Hockey Dinamos',
           ogDescription:
-            'Conoce más sobre Senova, nuestra misión, visión y valores. Descubre cómo estamos comprometidos en ofrecer soluciones innovadoras para la gestión de proyectos y tareas, ayudando a nuestros clientes a alcanzar el éxito.',
-          ogImage: 'https://senova.com/assets/images/og-about.png',
-          ogUrl: 'https://senova.com/nosotros',
-          twitterTitle: 'Nosotros | Senova',
-          twitterDescription:
-            'Conoce más sobre Senova, nuestra misión, visión y valores. Descubre cómo estamos comprometidos en ofrecer soluciones innovadoras para la gestión de proyectos y tareas, ayudando a nuestros clientes a alcanzar el éxito.',
-          twitterImage: 'https://senova.com/assets/images/twitter-about.png',
-          twitterUrl: 'https://senova.com/nosotros',
-        }
+            'Conoce más sobre Imperial Hockey Dinamos, nuestra misión, visión y valores.',
+        },
       },
       {
         path: 'categorias',
-        component: Category,
+        loadComponent: () => import('./category/category').then(m => m.Category),
         data: {
-          title: 'Categorías | Senova',
+          title: 'Categorías | Imperial Hockey Dinamos',
           description:
-            'Explora nuestras categorías de servicios en Senova. Descubre cómo nuestras soluciones innovadoras pueden ayudarte a gestionar tus proyectos de manera eficiente y alcanzar el éxito.',
-          keywords: 'Senova, categorías, servicios, soluciones innovadoras, gestión de proyectos, éxito',
-          ogTitle: 'Categorías | Senova',
+            'Explora nuestras categorías de servicios en Imperial Hockey Dinamos.',
+          keywords: 'Imperial Hockey Dinamos, categorías, servicios',
+          ogTitle: 'Categorías | Imperial Hockey Dinamos',
           ogDescription:
-            'Explora nuestras categorías de servicios en Senova. Descubre cómo nuestras soluciones innovadoras pueden ayudarte a gestionar tus proyectos de manera eficiente y alcanzar el éxito.',
-          ogImage: 'https://senova.com/assets/images/og-categories.png',
-          ogUrl: 'https://senova.com/categorias',
-          twitterTitle: 'Categorías | Senova',
-          twitterDescription:
-            'Explora nuestras categorías de servicios en Senova. Descubre cómo nuestras soluciones innovadoras pueden ayudarte a gestionar tus proyectos de manera eficiente y alcanzar el éxito.',
-          twitterImage: 'https://senova.com/assets/images/twitter-categories.png',
-          twitterUrl: 'https://senova.com/categorias',
-        }
-      }
+            'Explora nuestras categorías de servicios en Imperial Hockey Dinamos.',
+        },
+      },
     ],
   },
 ];

@@ -1,6 +1,20 @@
 @use '../../../../../public/assets/styles/variables' as v;
 @use '../../../../../public/assets/styles/mixins' as m;
 
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 100;
+  padding: 8px 16px;
+  background: v.color(primary);
+  color: v.color(text-light);
+
+  &:focus {
+    top: 0;
+  }
+}
+
 .layout {
   display: grid;
   min-height: 100dvh;

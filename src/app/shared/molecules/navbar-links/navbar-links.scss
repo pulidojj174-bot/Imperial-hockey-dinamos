@@ -1,0 +1,50 @@
+@use '../../../../../public/assets/styles/variables' as v;
+@use '../../../../../public/assets/styles/mixins' as m;
+
+.navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-xs;
+
+  @include m.desktop() {
+    flex-direction: row;
+    align-items: center;
+    gap: v.$spacing-xs;
+  }
+
+  &__link {
+    display: block;
+    font-family: v.$font-family-secondary;
+    font-size: v.$font-size-text-mobile;
+    color: v.color(text-light-muted);
+    text-decoration: none;
+    padding: v.$spacing-sm v.$spacing-md;
+    border-radius: v.$borderRadius-sm;
+    transition:
+      color v.$transitionDuration v.$transitionEasing,
+      background v.$transitionDuration v.$transitionEasing;
+
+    @include m.desktop() {
+      font-size: v.$font-size-sm;
+      padding: v.$spacing-sm v.$spacing-md;
+    }
+
+    &:hover {
+      color: v.color(accent);
+      background: v.color(bg-glass);
+    }
+
+    &--active {
+      color: v.color(accent);
+      background: v.color(hover-primary);
+    }
+
+    &:focus-visible {
+      outline: 2px solid v.color(accent);
+      outline-offset: 2px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<nav class="navbar" aria-label="Navegación principal">
+  <div class="navbar__bar">
+    <app-navbar-brand />
+
+    <app-navbar-toggle
+      [isOpen]="isMenuOpen()"
+      (toggled)="toggleMenu()"
+    />
+
+    <div
+      id="navbar-menu"
+      class="navbar__menu"
+      [class.navbar__menu--open]="isMenuOpen()"
+    >
+      <app-navbar-links
+        [links]="navLinks"
+        (linkClicked)="closeMenu()"
+      />
+    </div>
+  </div>
+</nav>

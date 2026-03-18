@@ -1,0 +1,33 @@
+@use '../../../../../public/assets/styles/variables' as v;
+@use '../../../../../public/assets/styles/mixins' as m;
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: v.$spacing-sm;
+  z-index: v.$z-dropdown + 1;
+
+  &__name {
+    font-family: v.$font-family-primary;
+    font-size: 1.25rem;
+    color: v.color(accent);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    transition: color v.$transitionDuration v.$transitionEasing;
+
+    @include m.tablet() {
+      font-size: 1.5rem;
+    }
+  }
+
+  &:hover .navbar-brand__name {
+    color: v.color(gold-light);
+  }
+
+  &:focus-visible {
+    outline: 2px solid v.color(accent);
+    outline-offset: 4px;
+    border-radius: v.$borderRadius-sm;
+  }
+}

@@ -1,0 +1,15 @@
+<ul class="navbar-links">
+  @for (link of links(); track link.route) {
+    <li class="navbar-links__item">
+      <a
+        class="navbar-links__link"
+        [routerLink]="link.route"
+        routerLinkActive="navbar-links__link--active"
+        [routerLinkActiveOptions]="{ exact: link.route === '/' }"
+        (click)="linkClicked.emit()"
+      >
+        {{ link.label }}
+      </a>
+    </li>
+  }
+</ul>

@@ -16,7 +16,17 @@
 }
 
 .layout {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   min-height: 100dvh;
-  grid-template-rows: auto 1fr auto;
+
+  &__header {
+    position: sticky;
+    top: 0;
+    z-index: v.$z-dropdown;
+  }
+
+  &__main {
+    flex: 1;
+  }
 }

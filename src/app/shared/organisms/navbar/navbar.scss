@@ -2,9 +2,6 @@
 @use '../../../../../public/assets/styles/mixins' as m;
 
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: v.$z-dropdown;
   background: v.color(surface);
   border-bottom: 1px solid v.color(border-subtle);
   backdrop-filter: blur(12px);

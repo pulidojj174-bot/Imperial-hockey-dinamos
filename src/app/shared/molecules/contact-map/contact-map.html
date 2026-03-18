@@ -1,0 +1,14 @@
+<section class="contact-map" aria-label="Ubicación del club">
+  <h2 class="contact-map__title">Encuéntranos</h2>
+  <p class="contact-map__address">{{ address() }}</p>
+
+  <div class="contact-map__frame-wrapper">
+    <iframe
+      class="contact-map__frame"
+      [src]="safeMapUrl()"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Mapa de ubicación de Imperial Hockey Dinamos"
+    ></iframe>
+  </div>
+</section>

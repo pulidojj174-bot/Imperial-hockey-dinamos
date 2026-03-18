@@ -1,0 +1,26 @@
+@use '../../../../../public/assets/styles/variables' as v;
+@use '../../../../../public/assets/styles/mixins' as m;
+
+.contact-section {
+  max-width: v.$container-max-width;
+  margin: 0 auto;
+  padding: 0 v.$spacing-lg v.$spacing-xxl;
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$spacing-lg;
+
+    @include m.tablet() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m.desktop() {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__map {
+    margin-top: v.$spacing-xxl;
+  }
+}

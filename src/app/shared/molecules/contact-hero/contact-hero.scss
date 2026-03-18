@@ -1,0 +1,39 @@
+@use '../../../../../public/assets/styles/variables' as v;
+@use '../../../../../public/assets/styles/mixins' as m;
+
+.contact-hero {
+  text-align: center;
+  padding: v.$spacing-xxl v.$spacing-md;
+
+  @include m.tablet() {
+    padding: v.$spacing-xxl v.$spacing-xl;
+  }
+
+  &__title {
+    font-family: v.$font-family-primary;
+    font-size: v.$font-size-title-mobile;
+    color: v.color(accent);
+    margin: 0 0 v.$spacing-md;
+
+    @include m.tablet() {
+      font-size: v.$font-size-subtitle;
+    }
+
+    @include m.desktop() {
+      font-size: v.$font-size-title;
+    }
+  }
+
+  &__description {
+    font-family: v.$font-family-secondary;
+    font-size: v.$font-size-text-mobile;
+    color: v.color(text-muted);
+    line-height: 1.7;
+    margin: 0 auto;
+    max-width: 600px;
+
+    @include m.tablet() {
+      font-size: v.$font-size-text;
+    }
+  }
+}

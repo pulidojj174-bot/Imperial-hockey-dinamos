@@ -1,0 +1,29 @@
+<article class="contact-card">
+  <div class="contact-card__icon-wrapper" aria-hidden="true">
+    <svg
+      class="contact-card__icon"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      width="32"
+      height="32"
+    >
+      <path [attr.d]="info().icon" />
+    </svg>
+  </div>
+
+  <h2 class="contact-card__title">{{ info().title }}</h2>
+
+  @for (line of info().lines; track $index) {
+    <p class="contact-card__text">{{ line }}</p>
+  }
+
+  @if (info().link) {
+    <a
+      class="contact-card__link"
+      [href]="info().link"
+      [attr.aria-label]="info().linkLabel"
+    >
+      {{ info().linkLabel }}
+    </a>
+  }
+</article>

@@ -1,0 +1,13 @@
+<div class="contact-section">
+  <app-contact-hero />
+
+  <section class="contact-section__cards" aria-label="Información de contacto">
+    @for (card of contactCards; track card.title) {
+      <app-contact-info-card [info]="card" />
+    }
+  </section>
+
+  <div class="contact-section__map">
+    <app-contact-map />
+  </div>
+</div>

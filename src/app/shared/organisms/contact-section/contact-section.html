@@ -2,12 +2,14 @@
   <app-contact-hero />
 
   <section class="contact-section__cards" aria-label="Información de contacto">
-    @for (card of contactCards; track card.title) {
-      <app-contact-info-card [info]="card" />
+    @for (card of contactCards; track card.title; let i = $index) {
+      <div appReveal [delay]="(i * 120) + 'ms'">
+        <app-contact-info-card [info]="card" />
+      </div>
     }
   </section>
 
-  <div class="contact-section__map">
+  <div class="contact-section__map" appReveal delay="100ms">
     <app-contact-map />
   </div>
 </div>

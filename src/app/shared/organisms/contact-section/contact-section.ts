@@ -2,10 +2,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ContactHero } from '../../molecules/contact-hero/contact-hero';
 import { ContactInfoCard, ContactInfo } from '../../molecules/contact-info-card/contact-info-card';
 import { ContactMap } from '../../molecules/contact-map/contact-map';
+import { RevealDirective } from '../../../core/directives/reveal.directive';
 
 @Component({
   selector: 'app-contact-section',
-  imports: [ContactHero, ContactInfoCard, ContactMap],
+  imports: [ContactHero, ContactInfoCard, ContactMap, RevealDirective],
   templateUrl: './contact-section.html',
   styleUrl: './contact-section.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

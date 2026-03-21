@@ -7,10 +7,15 @@
   border-radius: v.$borderRadius;
   padding: v.$spacing-xl v.$spacing-lg;
   text-align: center;
-  transition: border-color v.$transitionDuration v.$transitionEasing;
+  transition:
+    border-color 0.3s v.$transitionEasing,
+    transform 0.3s v.$transitionEasing,
+    box-shadow 0.3s v.$transitionEasing;
 
   &:hover {
     border-color: v.color(accent);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px v.color(accent);
   }
 
   &__icon-wrapper {
@@ -22,6 +27,11 @@
     border-radius: 50%;
     background: v.color(bg-glass);
     margin-bottom: v.$spacing-md;
+    transition: background 1s v.$transitionEasing;
+
+    .contact-card:hover & {
+      background: rgba(v.color(accent), 0.1);
+    }
   }
 
   &__icon {

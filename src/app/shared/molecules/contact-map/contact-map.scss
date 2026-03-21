@@ -29,6 +29,11 @@
     border-radius: v.$borderRadius;
     overflow: hidden;
     border: 1px solid v.color(border-subtle);
+    transition: border-color 0.3s v.$transitionEasing;
+
+    &:hover {
+      border-color: v.color(accent);
+    }
   }
 
   &__frame {

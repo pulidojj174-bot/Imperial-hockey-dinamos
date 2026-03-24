@@ -1,0 +1,63 @@
+@use '../../../../../public/assets/styles/variables' as v;
+@use '../../../../../public/assets/styles/mixins' as m;
+
+.about-story {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-xl;
+  align-items: center;
+
+  @include m.tablet() {
+    flex-direction: row;
+    gap: v.$spacing-xxl;
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    border-radius: v.$borderRadius-lg;
+    overflow: hidden;
+    border: 1px solid v.color(border-subtle);
+
+    @include m.tablet() {
+      flex: 0 0 45%;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__title {
+    font-family: v.$font-family-primary;
+    font-size: v.$font-size-subtitle;
+    color: v.color(accent);
+    margin: 0 0 v.$spacing-lg;
+
+    @include m.desktop() {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__text {
+    font-family: v.$font-family-secondary;
+    font-size: v.$font-size-text-mobile;
+    color: v.color(text-muted);
+    line-height: 1.8;
+    margin: 0;
+
+    & + & {
+      margin-top: v.$spacing-md;
+    }
+
+    @include m.tablet() {
+      font-size: v.$font-size-text;
+    }
+  }
+}

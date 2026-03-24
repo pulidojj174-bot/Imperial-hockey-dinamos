@@ -1,0 +1,19 @@
+<section class="about-gallery" aria-labelledby="gallery-title">
+  <h2 id="gallery-title" class="about-gallery__title">Nuestro Taller</h2>
+  <p class="about-gallery__subtitle">
+    Un vistazo al corazón de Imperial Dinamos.
+  </p>
+  <div class="about-gallery__grid">
+    @for (item of items; track item.src) {
+      <figure class="about-gallery__item">
+        <img
+          [ngSrc]="item.src"
+          [alt]="item.alt"
+          [width]="item.width"
+          [height]="item.height"
+          class="about-gallery__image"
+        />
+      </figure>
+    }
+  </div>
+</section>

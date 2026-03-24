@@ -1,0 +1,22 @@
+<section class="about-values" aria-labelledby="values-title">
+  <h2 id="values-title" class="about-values__title">Nuestros Valores</h2>
+  <div class="about-values__grid">
+    @for (value of values; track value.title) {
+      <article class="about-values__card">
+        <div class="about-values__icon-wrapper" aria-hidden="true">
+          <svg
+            class="about-values__icon"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            width="32"
+            height="32"
+          >
+            <path [attr.d]="value.icon" />
+          </svg>
+        </div>
+        <h3 class="about-values__card-title">{{ value.title }}</h3>
+        <p class="about-values__card-text">{{ value.description }}</p>
+      </article>
+    }
+  </div>
+</section>

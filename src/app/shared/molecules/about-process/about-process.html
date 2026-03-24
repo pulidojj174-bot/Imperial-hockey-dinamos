@@ -1,0 +1,22 @@
+<section class="about-process" aria-labelledby="process-title">
+  <h2 id="process-title" class="about-process__title">Proceso de Trabajo</h2>
+  <p class="about-process__subtitle">
+    De la idea a la mesa — así creamos tu dinamo perfecto.
+  </p>
+  <ol class="about-process__timeline" role="list">
+    @for (step of steps; track step.number) {
+      <li class="about-process__step">
+        <div class="about-process__step-number" aria-hidden="true">
+          {{ step.number }}
+        </div>
+        <div class="about-process__step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+            <path [attr.d]="step.icon" />
+          </svg>
+        </div>
+        <h3 class="about-process__step-title">{{ step.title }}</h3>
+        <p class="about-process__step-text">{{ step.description }}</p>
+      </li>
+    }
+  </ol>
+</section>

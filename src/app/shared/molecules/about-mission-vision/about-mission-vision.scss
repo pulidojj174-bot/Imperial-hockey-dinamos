@@ -1,0 +1,87 @@
+@use '../../../../../public/assets/styles/variables' as v;
+@use '../../../../../public/assets/styles/mixins' as m;
+
+.about-mv {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$spacing-xl;
+
+  @include m.tablet() {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__card {
+    background: v.color(bg-alt);
+    border: 1px solid v.color(border-subtle);
+    border-radius: v.$borderRadius-lg;
+    overflow: hidden;
+    transition:
+      border-color 0.3s v.$transitionEasing,
+      transform 0.3s v.$transitionEasing,
+      box-shadow 0.3s v.$transitionEasing;
+
+    &:hover {
+      border-color: v.color(accent);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    &--vision {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: v.$spacing-xl;
+    }
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding: v.$spacing-lg;
+  }
+
+  &__title {
+    font-family: v.$font-family-primary;
+    font-size: v.$font-size-subtitle;
+    color: v.color(accent);
+    margin: 0 0 v.$spacing-md;
+  }
+
+  &__text {
+    font-family: v.$font-family-secondary;
+    font-size: v.$font-size-text-mobile;
+    color: v.color(text-muted);
+    line-height: 1.7;
+    margin: 0;
+
+    @include m.tablet() {
+      font-size: v.$font-size-text;
+    }
+  }
+
+  &__accent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: v.color(bg-glass);
+    color: v.color(accent);
+    margin-bottom: v.$spacing-lg;
+    opacity: 0.6;
+  }
+}

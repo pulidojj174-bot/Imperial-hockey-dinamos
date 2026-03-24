@@ -1,0 +1,11 @@
+@use '../../../../../public/assets/styles/variables' as v;
+
+.about-section {
+  max-width: v.$container-max-width;
+  margin: 0 auto;
+  padding: 0 v.$spacing-lg v.$spacing-xxl;
+
+  &__block {
+    margin-top: v.$spacing-xxl;
+  }
+}

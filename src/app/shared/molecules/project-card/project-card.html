@@ -1,0 +1,24 @@
+<article
+  class="project-card"
+  tabindex="0"
+  role="button"
+  [attr.aria-label]="'Ver detalles del proyecto ' + project().name"
+  (click)="onSelect()"
+  (keydown)="onKeydown($event)"
+>
+  <div class="project-card__image-wrapper">
+    <img
+      [ngSrc]="project().image"
+      [alt]="project().imageAlt"
+      width="800"
+      height="600"
+      class="project-card__image"
+    />
+    <span class="project-card__type-badge">{{ project().typeLabel }}</span>
+  </div>
+  <div class="project-card__content">
+    <h3 class="project-card__name">{{ project().name }}</h3>
+    <p class="project-card__description">{{ project().description }}</p>
+    <span class="project-card__cta">Ver detalles →</span>
+  </div>
+</article>

@@ -1,0 +1,28 @@
+<div class="project-gallery">
+  <app-project-hero />
+
+  <div class="project-gallery__filter" appReveal>
+    <app-project-filter
+      [activeFilter]="activeFilter()"
+      (filterChange)="onFilterChange($event)"
+    />
+  </div>
+
+  <div class="project-gallery__grid" appReveal>
+    @for (project of filteredProjects(); track project.id) {
+      <app-project-card
+        [project]="project"
+        (projectClick)="onProjectSelect($event)"
+      />
+    } @empty {
+      <p class="project-gallery__empty">No hay proyectos en esta categoría.</p>
+    }
+  </div>
+
+  @if (selectedProject(); as project) {
+    <app-project-detail
+      [project]="project"
+      (closeDetail)="onCloseDetail()"
+    />
+  }
+</div>

@@ -1,0 +1,70 @@
+<div
+  class="project-detail"
+  role="dialog"
+  aria-modal="true"
+  [attr.aria-label]="'Detalle del proyecto ' + project().name"
+  (click)="onOverlayClick($event)"
+  (keydown)="onKeydown($event)"
+>
+  <div class="project-detail__panel">
+    <button
+      type="button"
+      class="project-detail__close"
+      aria-label="Cerrar detalle del proyecto"
+      (click)="onClose()"
+    >
+      ✕
+    </button>
+
+    <div class="project-detail__image-wrapper">
+      <img
+        [ngSrc]="project().image"
+        [alt]="project().imageAlt"
+        width="800"
+        height="600"
+        class="project-detail__image"
+        priority
+      />
+      <span class="project-detail__badge">{{ project().typeLabel }}</span>
+    </div>
+
+    <div class="project-detail__body">
+      <h2 class="project-detail__title">{{ project().name }}</h2>
+      <p class="project-detail__description">{{ project().description }}</p>
+
+      <div class="project-detail__sections">
+        <div class="project-detail__section">
+          <h3 class="project-detail__section-title">Historia del diseño</h3>
+          <p class="project-detail__section-text">{{ project().designStory }}</p>
+        </div>
+
+        <div class="project-detail__section">
+          <h3 class="project-detail__section-title">Materiales utilizados</h3>
+          <ul class="project-detail__materials" role="list">
+            @for (material of project().materials; track material) {
+              <li class="project-detail__material-item">{{ material }}</li>
+            }
+          </ul>
+        </div>
+
+        <div class="project-detail__section">
+          <h3 class="project-detail__section-title">Personalización aplicada</h3>
+          <p class="project-detail__section-text">{{ project().customization }}</p>
+        </div>
+
+        <div class="project-detail__section">
+          <h3 class="project-detail__section-title">Resultado final</h3>
+          <p class="project-detail__section-text">{{ project().result }}</p>
+        </div>
+      </div>
+
+      <a
+        href="/contacto"
+        class="project-detail__cta"
+        aria-label="Solicitar cotización para un proyecto similar"
+      >
+        Cotizar un proyecto similar
+      </a>
+    </div>
+  </div>
+</div>

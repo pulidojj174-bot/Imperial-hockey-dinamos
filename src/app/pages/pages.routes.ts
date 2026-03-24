@@ -24,11 +24,11 @@ export const pagesRoutes: Routes = [
         data: {
           title: 'Proyectos | Imperial Hockey Dinamo',
           description:
-            'Explora nuestros proyectos destacados en Imperial Hockey Dinamo.',
-          keywords: 'Imperial Hockey Dinamo, proyectos, mesas de juego',
+            'Descubre nuestros trabajos reales: dínamos, billares y mesas de juego artesanales. Cada proyecto demuestra la calidad y dedicación de Imperial Hockey Dinamo.',
+          keywords: 'Imperial Hockey Dinamo, proyectos, dínamos, billares, juegos de mesa, mesas artesanales, galería',
           ogTitle: 'Proyectos | Imperial Hockey Dinamo',
           ogDescription:
-            'Explora nuestros proyectos destacados en Imperial Hockey Dinamo.',
+            'Galería de proyectos reales de Imperial Hockey Dinamo. Mesas dínamo, billares y juegos de mesa fabricados con materiales premium.',
         },
       },
       {

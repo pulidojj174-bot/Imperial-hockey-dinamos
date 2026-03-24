@@ -1,0 +1,17 @@
+<nav class="project-filter" aria-label="Filtrar proyectos por categoría">
+  <ul class="project-filter__list" role="list">
+    @for (filter of filters; track filter.value) {
+      <li class="project-filter__item">
+        <button
+          type="button"
+          class="project-filter__button"
+          [class.project-filter__button--active]="activeFilter() === filter.value"
+          [attr.aria-pressed]="activeFilter() === filter.value"
+          (click)="onFilter(filter.value)"
+        >
+          {{ filter.label }}
+        </button>
+      </li>
+    }
+  </ul>
+</nav>

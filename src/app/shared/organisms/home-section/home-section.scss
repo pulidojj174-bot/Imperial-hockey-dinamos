@@ -1,0 +1,13 @@
+@use '../../../../../public/assets/styles/variables' as v;
+
+.home-section {
+  &__block {
+    max-width: v.$container-max-width;
+    margin: 0 auto;
+    padding: v.$spacing-xxl v.$spacing-md;
+  }
+
+  &__cta {
+    width: 100%;
+  }
+}

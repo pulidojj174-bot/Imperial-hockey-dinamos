@@ -1,0 +1,20 @@
+<section class="values" aria-labelledby="values-title">
+  <div class="values__container">
+    <div class="values__header">
+      <h2 id="values-title" class="values__title">¿Por qué elegirnos?</h2>
+      <p class="values__subtitle">
+        Lo que nos hace diferentes en cada proyecto
+      </p>
+    </div>
+
+    <div class="values__grid">
+      @for (value of values; track value.title) {
+        <article class="values__card">
+          <span class="values__card-icon" aria-hidden="true">{{ value.icon }}</span>
+          <h3 class="values__card-title">{{ value.title }}</h3>
+          <p class="values__card-description">{{ value.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

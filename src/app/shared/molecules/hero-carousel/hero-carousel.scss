@@ -1,0 +1,173 @@
+@use '../../../../../public/assets/styles/variables' as v;
+@use '../../../../../public/assets/styles/mixins' as m;
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  &__slides {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 15, 13, 0.4) 0%,
+      rgba(10, 15, 13, 0.7) 50%,
+      rgba(10, 15, 13, 0.92) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: v.$spacing-md;
+  }
+
+  &__content {
+    text-align: center;
+    max-width: 800px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: hero-enter 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  }
+
+  &__title {
+    font-family: v.$font-family-primary;
+    font-size: clamp(2rem, 6vw, v.$font-size-title);
+    color: v.color(text-light);
+    margin: 0 0 v.$spacing-lg;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  &__title-accent {
+    color: v.color(accent);
+  }
+
+  &__subtitle {
+    font-family: v.$font-family-secondary;
+    font-size: clamp(1rem, 2.5vw, v.$font-size-text);
+    color: v.color(text-light-muted);
+    line-height: 1.7;
+    margin: 0 0 v.$spacing-xl;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-md;
+    align-items: center;
+
+    @include m.tablet() {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: v.$spacing-md v.$spacing-xl;
+    font-family: v.$font-family-secondary;
+    font-size: v.$font-size-text-mobile;
+    font-weight: 700;
+    border-radius: v.$borderRadius;
+    text-decoration: none;
+    transition: all 0.3s v.$transitionEasing;
+    min-width: 200px;
+
+    &--primary {
+      background: v.color(accent);
+      color: v.color(text-dark);
+
+      &:hover {
+        background: v.color(gold-light);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(200, 169, 106, 0.3);
+      }
+    }
+
+    &--secondary {
+      background: transparent;
+      color: v.color(text-light);
+      border: 2px solid v.color(accent);
+
+      &:hover {
+        background: rgba(200, 169, 106, 0.1);
+        transform: translateY(-3px);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid v.color(accent);
+      outline-offset: 3px;
+    }
+  }
+
+  &__indicators {
+    position: absolute;
+    bottom: v.$spacing-xl;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: v.$spacing-sm;
+    z-index: 2;
+  }
+
+  &__indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid v.color(accent);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s v.$transitionEasing;
+
+    &--active {
+      background: v.color(accent);
+      transform: scale(1.2);
+    }
+
+    &:hover {
+      background: rgba(200, 169, 106, 0.5);
+    }
+
+    &:focus-visible {
+      outline: 2px solid v.color(text-light);
+      outline-offset: 2px;
+    }
+  }
+}
+
+@keyframes hero-enter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

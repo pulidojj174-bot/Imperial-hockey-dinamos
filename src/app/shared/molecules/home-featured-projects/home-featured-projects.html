@@ -1,0 +1,36 @@
+<section class="featured" aria-labelledby="featured-title">
+  <div class="featured__container">
+    <div class="featured__header">
+      <h2 id="featured-title" class="featured__title">Proyectos Destacados</h2>
+      <p class="featured__subtitle">
+        Trabajos reales que demuestran nuestra calidad
+      </p>
+    </div>
+
+    <div class="featured__grid">
+      @for (project of projects; track project.name) {
+        <article class="featured__card">
+          <div class="featured__card-image-wrapper">
+            <img
+              [ngSrc]="project.image"
+              [alt]="project.imageAlt"
+              width="800"
+              height="600"
+              class="featured__card-image"
+            />
+            <div class="featured__card-overlay">
+              <span class="featured__card-type">{{ project.type }}</span>
+              <h3 class="featured__card-name">{{ project.name }}</h3>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+
+    <div class="featured__action">
+      <a href="/proyectos" class="featured__cta" aria-label="Ver todos los proyectos">
+        Ver todos los proyectos
+      </a>
+    </div>
+  </div>
+</section>

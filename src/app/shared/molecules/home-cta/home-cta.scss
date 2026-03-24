@@ -1,0 +1,118 @@
+@use '../../../../../public/assets/styles/variables' as v;
+@use '../../../../../public/assets/styles/mixins' as m;
+
+.cta {
+  padding: v.$spacing-xxl v.$spacing-md;
+  background: linear-gradient(
+    135deg,
+    v.color(primary) 0%,
+    v.color(green-950) 50%,
+    v.color(primary) 100%
+  );
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(200, 169, 106, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(200, 169, 106, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  @include m.tablet() {
+    padding: 80px v.$spacing-xl;
+  }
+
+  &__container {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    font-family: v.$font-family-primary;
+    font-size: v.$font-size-title-mobile;
+    color: v.color(accent);
+    margin: 0 0 v.$spacing-lg;
+    line-height: 1.15;
+
+    @include m.tablet() {
+      font-size: v.$font-size-subtitle;
+    }
+
+    @include m.desktop() {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__description {
+    font-family: v.$font-family-secondary;
+    font-size: v.$font-size-text-mobile;
+    color: v.color(text-light-muted);
+    line-height: 1.8;
+    margin: 0 0 v.$spacing-xl;
+
+    @include m.tablet() {
+      font-size: v.$font-size-text;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-md;
+    align-items: center;
+
+    @include m.tablet() {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: v.$spacing-md v.$spacing-xl;
+    font-family: v.$font-family-secondary;
+    font-size: v.$font-size-text-mobile;
+    font-weight: 700;
+    border-radius: v.$borderRadius;
+    text-decoration: none;
+    transition: all 0.3s v.$transitionEasing;
+    min-width: 200px;
+
+    &--primary {
+      background: v.color(accent);
+      color: v.color(text-dark);
+
+      &:hover {
+        background: v.color(gold-light);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(200, 169, 106, 0.3);
+      }
+    }
+
+    &--secondary {
+      background: transparent;
+      color: v.color(text-light);
+      border: 2px solid rgba(245, 247, 246, 0.3);
+
+      &:hover {
+        border-color: v.color(accent);
+        color: v.color(accent);
+        transform: translateY(-3px);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid v.color(accent);
+      outline-offset: 3px;
+    }
+  }
+}

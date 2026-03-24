@@ -1,0 +1,57 @@
+<section class="hero" aria-labelledby="hero-title" aria-roledescription="carrusel">
+  <div class="hero__slides">
+    @for (slide of slides; track slide.image; let i = $index) {
+      <div
+        class="hero__slide"
+        [class.hero__slide--active]="currentSlide() === i"
+        [attr.aria-hidden]="currentSlide() !== i"
+        role="group"
+        [attr.aria-roledescription]="'diapositiva'"
+        [attr.aria-label]="'Diapositiva ' + (i + 1) + ' de ' + slides.length"
+      >
+        <img
+          [src]="slide.image"
+          [alt]="slide.alt"
+          class="hero__image"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    }
+  </div>
+
+  <div class="hero__overlay">
+    <div class="hero__content">
+      <h1 id="hero-title" class="hero__title">
+        Creamos dínamos únicos.<br />
+        <span class="hero__title-accent">Diseñados para destacar.</span>
+      </h1>
+      <p class="hero__subtitle">
+        Fabricación personalizada de dínamos, billares y juegos de mesa
+        con diseño exclusivo y acabados de alto nivel.
+      </p>
+      <div class="hero__actions">
+        <a href="/proyectos" class="hero__cta hero__cta--primary" aria-label="Ver nuestros proyectos destacados">
+          Ver proyectos
+        </a>
+        <a href="/contacto" class="hero__cta hero__cta--secondary" aria-label="Solicitar cotización de diseño personalizado">
+          Cotizar diseño
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__indicators" role="tablist" aria-label="Controles del carrusel">
+    @for (slide of slides; track slide.image; let i = $index) {
+      <button
+        type="button"
+        class="hero__indicator"
+        [class.hero__indicator--active]="currentSlide() === i"
+        role="tab"
+        [attr.aria-selected]="currentSlide() === i"
+        [attr.aria-label]="'Ir a diapositiva ' + (i + 1)"
+        (click)="goToSlide(i)"
+      ></button>
+    }
+  </div>
+</section>

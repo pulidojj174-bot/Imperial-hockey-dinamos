@@ -1,0 +1,43 @@
+<section class="products" aria-labelledby="products-title">
+  <div class="products__container">
+    <div class="products__header">
+      <h2 id="products-title" class="products__title">Nuestros Productos</h2>
+      <p class="products__subtitle">
+        Tres líneas de mesas diseñadas para quienes exigen lo mejor
+      </p>
+    </div>
+
+    <div class="products__grid">
+      @for (product of products; track product.title) {
+        <article
+          class="products__card"
+          [class.products__card--featured]="product.featured"
+        >
+          <div class="products__card-image-wrapper">
+            <img
+              [ngSrc]="product.image"
+              [alt]="product.imageAlt"
+              width="800"
+              height="600"
+              class="products__card-image"
+            />
+            @if (product.featured) {
+              <span class="products__card-badge">Destacado</span>
+            }
+          </div>
+          <div class="products__card-body">
+            <span class="products__card-icon" aria-hidden="true">{{ product.icon }}</span>
+            <h3 class="products__card-title">{{ product.title }}</h3>
+            <p class="products__card-description">{{ product.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
+
+    <div class="products__action">
+      <a href="/categorias" class="products__cta" aria-label="Ver todas las categorías de productos">
+        Ver categorías
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,111 @@
+@use '../../../../../public/assets/styles/variables' as v;
+@use '../../../../../public/assets/styles/mixins' as m;
+
+.specialty {
+  padding: v.$spacing-xxl v.$spacing-md;
+  background: v.color(background);
+
+  @include m.tablet() {
+    padding: v.$spacing-xxl v.$spacing-xl;
+  }
+
+  &__container {
+    max-width: v.$container-max-width;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$spacing-xl;
+    align-items: center;
+
+    @include m.desktop() {
+      grid-template-columns: 1fr 1fr;
+      gap: v.$spacing-xxl;
+    }
+  }
+
+  &__tag {
+    display: inline-block;
+    font-family: v.$font-family-secondary;
+    font-size: v.$font-size-ultra-sm;
+    font-weight: 700;
+    color: v.color(accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: v.$spacing-md;
+    padding: v.$spacing-xs v.$spacing-md;
+    border: 1px solid rgba(200, 169, 106, 0.3);
+    border-radius: v.$borderRadius-sm;
+    background: rgba(200, 169, 106, 0.08);
+  }
+
+  &__title {
+    font-family: v.$font-family-primary;
+    font-size: v.$font-size-title-mobile;
+    color: v.color(text-light);
+    margin: 0 0 v.$spacing-lg;
+    line-height: 1.15;
+
+    @include m.tablet() {
+      font-size: v.$font-size-subtitle;
+    }
+
+    @include m.desktop() {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__description {
+    font-family: v.$font-family-secondary;
+    font-size: v.$font-size-text-mobile;
+    color: v.color(text-muted);
+    line-height: 1.8;
+    margin: 0 0 v.$spacing-xl;
+
+    @include m.tablet() {
+      font-size: v.$font-size-text;
+    }
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    padding: v.$spacing-sm v.$spacing-xl;
+    background: v.color(accent);
+    color: v.color(text-dark);
+    font-family: v.$font-family-secondary;
+    font-size: v.$font-size-text-mobile;
+    font-weight: 700;
+    border-radius: v.$borderRadius;
+    text-decoration: none;
+    transition: all 0.3s v.$transitionEasing;
+
+    &:hover {
+      background: v.color(gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200, 169, 106, 0.25);
+    }
+
+    &:focus-visible {
+      outline: 2px solid v.color(accent);
+      outline-offset: 3px;
+    }
+  }
+
+  &__image-wrapper {
+    border-radius: v.$borderRadius-lg;
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s v.$transitionEasing;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+}

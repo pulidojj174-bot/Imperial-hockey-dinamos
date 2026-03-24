@@ -1,0 +1,35 @@
+<section class="before-after" aria-labelledby="before-after-title">
+  <div class="before-after__header">
+    <span class="before-after__tag">Transformaciones reales</span>
+    <h2 id="before-after-title" class="before-after__title">Antes y Después</h2>
+    <p class="before-after__subtitle">
+      Desliza para descubrir cómo transformamos cada espacio con nuestras mesas personalizadas
+    </p>
+  </div>
+
+  <div class="before-after__grid">
+    @for (project of projects; track project.name) {
+      <article class="before-after__card">
+        <div class="before-after__compare">
+          <p-imagecompare class="before-after__slider" aria-label="Comparar antes y después de {{ project.name }}">
+            <ng-template #left>
+              <img [src]="project.afterImage" [alt]="project.afterAlt" />
+            </ng-template>
+            <ng-template #right>
+              <img [src]="project.beforeImage" [alt]="project.beforeAlt" />
+            </ng-template>
+          </p-imagecompare>
+          <div class="before-after__labels">
+            <span class="before-after__label before-after__label--after">Después</span>
+            <span class="before-after__label before-after__label--before">Antes</span>
+          </div>
+        </div>
+        <div class="before-after__info">
+          <span class="before-after__type">{{ project.type }}</span>
+          <h3 class="before-after__name">{{ project.name }}</h3>
+          <p class="before-after__description">{{ project.description }}</p>
+        </div>
+      </article>
+    }
+  </div>
+</section>

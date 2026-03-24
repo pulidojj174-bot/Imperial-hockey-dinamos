@@ -1,0 +1,31 @@
+@use '../../../../../public/assets/styles/variables' as v;
+@use '../../../../../public/assets/styles/mixins' as m;
+
+.category-section {
+  max-width: v.$container-max-width;
+  margin: 0 auto;
+  padding: 0 v.$spacing-md v.$spacing-xxl;
+
+  @include m.tablet() {
+    padding: 0 v.$spacing-xl v.$spacing-xxl;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$spacing-xl;
+    margin-bottom: v.$spacing-xxl;
+
+    @include m.tablet() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m.desktop() {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__gallery {
+    margin-top: v.$spacing-xxl;
+  }
+}

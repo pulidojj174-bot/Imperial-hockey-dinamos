@@ -1,0 +1,29 @@
+<section class="category-gallery" aria-labelledby="gallery-title">
+  <h2 id="gallery-title" class="category-gallery__title">Galería de Productos</h2>
+  <p class="category-gallery__subtitle">
+    Explora nuestra colección completa de mesas artesanales en cada categoría
+  </p>
+
+  <p-accordion [multiple]="true" value="dinamos">
+    @for (cat of categories; track cat.id) {
+      <p-accordion-panel [value]="cat.id">
+        <p-accordion-header>{{ cat.title }}</p-accordion-header>
+        <p-accordion-content>
+          <div class="category-gallery__grid">
+            @for (img of cat.images; track img.src) {
+              <div class="category-gallery__item">
+                <img
+                  [ngSrc]="img.src"
+                  [alt]="img.alt"
+                  width="600"
+                  height="400"
+                  class="category-gallery__image"
+                />
+              </div>
+            }
+          </div>
+        </p-accordion-content>
+      </p-accordion-panel>
+    }
+  </p-accordion>
+</section>

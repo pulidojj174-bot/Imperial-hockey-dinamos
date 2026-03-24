@@ -9,5 +9,5 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarBrand {
-  readonly brandName = input('Imperial Hockey Dinamos');
+  readonly brandName = input('Imperial Hockey Dinamo');
 }

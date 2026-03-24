@@ -1,0 +1,47 @@
+<article class="category-card" [class.category-card--featured]="category().featured">
+  @if (category().featured) {
+    <span class="category-card__badge">Destacado</span>
+  }
+  <div class="category-card__image-wrapper">
+    <img
+      [ngSrc]="category().image"
+      [alt]="category().imageAlt"
+      width="600"
+      height="400"
+      class="category-card__image"
+      priority
+    />
+  </div>
+  <div class="category-card__content">
+    <h2 class="category-card__title">{{ category().title }}</h2>
+    <p class="category-card__description">{{ category().description }}</p>
+
+    <div class="category-card__details">
+      <div class="category-card__detail-group">
+        <h3 class="category-card__detail-title">Tipos de diseños</h3>
+        <ul class="category-card__list" role="list">
+          @for (design of category().designs; track design) {
+            <li class="category-card__list-item">{{ design }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="category-card__detail-group">
+        <h3 class="category-card__detail-title">Personalización</h3>
+        <ul class="category-card__list" role="list">
+          @for (option of category().customizations; track option) {
+            <li class="category-card__list-item">{{ option }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <a
+      href="/contacto"
+      class="category-card__cta"
+      aria-label="Cotizar {{ category().title }}"
+    >
+      Cotizar
+    </a>
+  </div>
+</article>

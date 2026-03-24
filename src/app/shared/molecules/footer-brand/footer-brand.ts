@@ -8,6 +8,6 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterBrand {
-  readonly brandName = input('Imperial Hockey Dinamos');
-  readonly description = input('Club de hockey sobre hielo dedicado a la formación, competición y pasión por el deporte.');
+  readonly brandName = input('Imperial Hockey Dinamo');
+  readonly description = input('Fabricantes artesanales de mesas de juego de azar: dínamos, billares y juegos de mesa premium.');
 }

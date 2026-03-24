@@ -19,7 +19,7 @@ export class AboutGallery {
   readonly items: GalleryItem[] = [
     {
       src: 'assets/images/about/gallery-1.jpg',
-      alt: 'Taller de fabricación de mesas dinamo de Imperial Dinamos',
+      alt: 'Taller de fabricación de mesas dinamo de Imperial Hockey Dinamo',
       width: 600,
       height: 400,
     },

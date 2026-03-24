@@ -1,0 +1,13 @@
+<div class="category-section">
+  <app-category-hero />
+
+  <div class="category-section__cards" appReveal>
+    @for (cat of categories; track cat.title) {
+      <app-category-card [category]="cat" />
+    }
+  </div>
+
+  <div class="category-section__gallery" appReveal>
+    <app-category-gallery />
+  </div>
+</div>

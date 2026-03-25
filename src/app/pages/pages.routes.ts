@@ -16,10 +16,7 @@ export const pagesRoutes: Routes = [
           description:
             'Imperial Hockey Dinamo: fabricantes artesanales de mesas de juego de azar. Dínamos personalizados, billares profesionales y juegos de mesa premium. Diseño 100% a medida con materiales de primera calidad.',
           keywords: 'Imperial Hockey Dinamo, mesas de juego, dínamos personalizados, billares profesionales, mesas artesanales, fabricación a medida, mesas premium Colombia',
-          ogTitle: 'Imperial Hockey Dinamo | Dínamos, Billares y Mesas de Juego Premium',
-          ogDescription:
-            'Fabricantes artesanales de dínamos, billares y mesas de juego personalizadas. Diseño exclusivo con materiales premium.',
-          ogImage: DEFAULT_IMAGE,
+          image: DEFAULT_IMAGE,
           jsonLd: {
             '@context': 'https://schema.org',
             '@type': 'Organization',
@@ -44,10 +41,7 @@ export const pagesRoutes: Routes = [
           description:
             'Galería de proyectos reales: dínamos ejecutivos, billares clásicos y mesas de póker VIP. Cada pieza demuestra nuestra calidad artesanal y atención al detalle.',
           keywords: 'proyectos dínamos, galería billares, mesas artesanales realizadas, portafolio Imperial Hockey Dinamo, trabajos personalizados',
-          ogTitle: 'Proyectos Realizados | Imperial Hockey Dinamo',
-          ogDescription:
-            'Descubre nuestros proyectos reales: dínamos de lujo, billares profesionales y mesas de juego artesanales fabricadas con materiales premium.',
-          ogImage: `${BASE_URL}/assets/images/projects/proyecto-dinamo-1.jpg`,
+          image: `${BASE_URL}/assets/images/projects/proyecto-dinamo-1.jpg`,
           jsonLd: {
             '@context': 'https://schema.org',
             '@type': 'CollectionPage',
@@ -66,9 +60,6 @@ export const pagesRoutes: Routes = [
           description:
             'Solicita una cotización personalizada o resuelve tus dudas. Nuestro equipo te asesora en el diseño y fabricación de tu mesa de juego ideal.',
           keywords: 'contacto Imperial Hockey Dinamo, cotización mesas, presupuesto dínamos, solicitar información billares',
-          ogTitle: 'Contacto | Imperial Hockey Dinamo',
-          ogDescription:
-            'Solicita tu cotización personalizada. Te asesoramos en el diseño y fabricación de dínamos, billares y mesas de juego.',
           jsonLd: {
             '@context': 'https://schema.org',
             '@type': 'ContactPage',
@@ -91,9 +82,6 @@ export const pagesRoutes: Routes = [
           description:
             'Conoce la historia de Imperial Hockey Dinamo: fabricantes artesanales con pasión por el detalle. Nuestra misión, visión, proceso de fabricación y compromiso con la calidad.',
           keywords: 'sobre Imperial Hockey Dinamo, historia, misión visión, fabricación artesanal, proceso creativo, valores empresa',
-          ogTitle: 'Nosotros | Imperial Hockey Dinamo',
-          ogDescription:
-            'Conoce la historia y valores de Imperial Hockey Dinamo. Fabricación artesanal de mesas de juego con pasión por el detalle.',
           jsonLd: {
             '@context': 'https://schema.org',
             '@type': 'AboutPage',
@@ -118,10 +106,7 @@ export const pagesRoutes: Routes = [
           description:
             'Explora nuestro catálogo: dínamos personalizados, billares profesionales y juegos de mesa premium. Cada categoría con galería de fotos y opciones de personalización.',
           keywords: 'categorías mesas de juego, catálogo dínamos, billares profesionales, juegos de mesa premium, personalización mesas',
-          ogTitle: 'Categorías de Mesas | Imperial Hockey Dinamo',
-          ogDescription:
-            'Catálogo completo: dínamos personalizados, billares profesionales y juegos de mesa premium con opciones de personalización.',
-          ogImage: `${BASE_URL}/assets/images/home/product-dinamos.jpg`,
+          image: `${BASE_URL}/assets/images/home/product-dinamos.jpg`,
           jsonLd: {
             '@context': 'https://schema.org',
             '@type': 'CollectionPage',

@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SeoService } from '../../../core/services/seo.service';
 import { Footer } from '../../../shared/organisms/footer/footer';
 import { Navbar } from '../../../shared/organisms/navbar/navbar';
 
@@ -10,4 +11,10 @@ import { Navbar } from '../../../shared/organisms/navbar/navbar';
   styleUrl: './layout-home.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LayoutHome {}
+export class LayoutHome {
+  private readonly seo = inject(SeoService);
+
+  constructor() {
+    this.seo.init();
+  }
+}

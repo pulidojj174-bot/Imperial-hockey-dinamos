@@ -1,5 +1,8 @@
 import { Routes } from '@angular/router';
 
+const BASE_URL = 'https://imperial-hockey-dinamos.vercel.app';
+const DEFAULT_IMAGE = `${BASE_URL}/assets/images/home/hero-1.jpg`;
+
 export const pagesRoutes: Routes = [
   {
     path: '',
@@ -9,26 +12,50 @@ export const pagesRoutes: Routes = [
         path: '',
         loadComponent: () => import('./home/home').then(m => m.Home),
         data: {
-          title: 'Inicio | Imperial Hockey Dinamo',
+          title: 'Imperial Hockey Dinamo | Fabricantes de Dínamos, Billares y Mesas de Juego Premium',
           description:
-            'Bienvenido a Imperial Hockey Dinamo, fabricantes artesanales de mesas de juego de azar. Dínamos, billares y juegos de mesa premium.',
-          keywords: 'Imperial Hockey Dinamo, mesas de juego, dínamos, billares, mesas artesanales',
-          ogTitle: 'Inicio | Imperial Hockey Dinamo',
+            'Imperial Hockey Dinamo: fabricantes artesanales de mesas de juego de azar. Dínamos personalizados, billares profesionales y juegos de mesa premium. Diseño 100% a medida con materiales de primera calidad.',
+          keywords: 'Imperial Hockey Dinamo, mesas de juego, dínamos personalizados, billares profesionales, mesas artesanales, fabricación a medida, mesas premium Colombia',
+          ogTitle: 'Imperial Hockey Dinamo | Dínamos, Billares y Mesas de Juego Premium',
           ogDescription:
-            'Bienvenido a Imperial Hockey Dinamo, fabricantes artesanales de mesas de juego de azar. Dínamos, billares y juegos de mesa premium.',
+            'Fabricantes artesanales de dínamos, billares y mesas de juego personalizadas. Diseño exclusivo con materiales premium.',
+          ogImage: DEFAULT_IMAGE,
+          jsonLd: {
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Imperial Hockey Dinamo',
+            url: BASE_URL,
+            logo: DEFAULT_IMAGE,
+            description: 'Fabricantes artesanales de mesas de juego de azar: dínamos, billares y juegos de mesa premium.',
+            sameAs: [],
+            contactPoint: {
+              '@type': 'ContactPoint',
+              contactType: 'customer service',
+              availableLanguage: 'Spanish',
+            },
+          },
         },
       },
       {
         path: 'proyectos',
         loadComponent: () => import('./project/project').then(m => m.Project),
         data: {
-          title: 'Proyectos | Imperial Hockey Dinamo',
+          title: 'Proyectos Realizados | Imperial Hockey Dinamo',
           description:
-            'Descubre nuestros trabajos reales: dínamos, billares y mesas de juego artesanales. Cada proyecto demuestra la calidad y dedicación de Imperial Hockey Dinamo.',
-          keywords: 'Imperial Hockey Dinamo, proyectos, dínamos, billares, juegos de mesa, mesas artesanales, galería',
-          ogTitle: 'Proyectos | Imperial Hockey Dinamo',
+            'Galería de proyectos reales: dínamos ejecutivos, billares clásicos y mesas de póker VIP. Cada pieza demuestra nuestra calidad artesanal y atención al detalle.',
+          keywords: 'proyectos dínamos, galería billares, mesas artesanales realizadas, portafolio Imperial Hockey Dinamo, trabajos personalizados',
+          ogTitle: 'Proyectos Realizados | Imperial Hockey Dinamo',
           ogDescription:
-            'Galería de proyectos reales de Imperial Hockey Dinamo. Mesas dínamo, billares y juegos de mesa fabricados con materiales premium.',
+            'Descubre nuestros proyectos reales: dínamos de lujo, billares profesionales y mesas de juego artesanales fabricadas con materiales premium.',
+          ogImage: `${BASE_URL}/assets/images/projects/proyecto-dinamo-1.jpg`,
+          jsonLd: {
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: 'Proyectos Realizados',
+            description: 'Galería de proyectos reales de Imperial Hockey Dinamo: dínamos, billares y juegos de mesa.',
+            url: `${BASE_URL}/proyectos`,
+            isPartOf: { '@type': 'WebSite', name: 'Imperial Hockey Dinamo', url: BASE_URL },
+          },
         },
       },
       {
@@ -37,37 +64,72 @@ export const pagesRoutes: Routes = [
         data: {
           title: 'Contacto | Imperial Hockey Dinamo',
           description:
-            '¿Tienes preguntas o necesitas más información? Contáctanos y nuestro equipo estará encantado de ayudarte.',
-          keywords: 'Imperial Hockey Dinamo, contacto, información, soporte',
+            'Solicita una cotización personalizada o resuelve tus dudas. Nuestro equipo te asesora en el diseño y fabricación de tu mesa de juego ideal.',
+          keywords: 'contacto Imperial Hockey Dinamo, cotización mesas, presupuesto dínamos, solicitar información billares',
           ogTitle: 'Contacto | Imperial Hockey Dinamo',
           ogDescription:
-            '¿Tienes preguntas o necesitas más información? Contáctanos y nuestro equipo estará encantado de ayudarte.',
+            'Solicita tu cotización personalizada. Te asesoramos en el diseño y fabricación de dínamos, billares y mesas de juego.',
+          jsonLd: {
+            '@context': 'https://schema.org',
+            '@type': 'ContactPage',
+            name: 'Contacto',
+            description: 'Página de contacto de Imperial Hockey Dinamo.',
+            url: `${BASE_URL}/contacto`,
+            mainEntity: {
+              '@type': 'Organization',
+              name: 'Imperial Hockey Dinamo',
+              url: BASE_URL,
+            },
+          },
         },
       },
       {
         path: 'nosotros',
         loadComponent: () => import('./about/about').then(m => m.About),
         data: {
-          title: 'Nosotros | Imperial Hockey Dinamo',
+          title: 'Nosotros | Imperial Hockey Dinamo - Nuestra Historia y Valores',
           description:
-            'Conoce más sobre Imperial Hockey Dinamo, nuestra misión, visión y valores.',
-          keywords: 'Imperial Hockey Dinamo, nosotros, misión, visión, valores',
+            'Conoce la historia de Imperial Hockey Dinamo: fabricantes artesanales con pasión por el detalle. Nuestra misión, visión, proceso de fabricación y compromiso con la calidad.',
+          keywords: 'sobre Imperial Hockey Dinamo, historia, misión visión, fabricación artesanal, proceso creativo, valores empresa',
           ogTitle: 'Nosotros | Imperial Hockey Dinamo',
           ogDescription:
-            'Conoce más sobre Imperial Hockey Dinamo, nuestra misión, visión y valores.',
+            'Conoce la historia y valores de Imperial Hockey Dinamo. Fabricación artesanal de mesas de juego con pasión por el detalle.',
+          jsonLd: {
+            '@context': 'https://schema.org',
+            '@type': 'AboutPage',
+            name: 'Nosotros',
+            description: 'Historia, misión, visión y valores de Imperial Hockey Dinamo.',
+            url: `${BASE_URL}/nosotros`,
+            mainEntity: {
+              '@type': 'Organization',
+              name: 'Imperial Hockey Dinamo',
+              url: BASE_URL,
+              foundingDate: '2020',
+              description: 'Fabricantes artesanales de mesas de juego de azar premium.',
+            },
+          },
         },
       },
       {
         path: 'categorias',
         loadComponent: () => import('./category/category').then(m => m.Category),
         data: {
-          title: 'Categorías | Imperial Hockey Dinamo',
+          title: 'Categorías de Mesas | Imperial Hockey Dinamo',
           description:
-            'Explora nuestro catálogo de mesas de juego artesanales: dínamos personalizados, billares y juegos de mesa premium.',
-          keywords: 'Imperial Hockey Dinamo, categorías, dínamos, billares, juegos de mesa, mesas artesanales',
-          ogTitle: 'Categorías | Imperial Hockey Dinamo',
+            'Explora nuestro catálogo: dínamos personalizados, billares profesionales y juegos de mesa premium. Cada categoría con galería de fotos y opciones de personalización.',
+          keywords: 'categorías mesas de juego, catálogo dínamos, billares profesionales, juegos de mesa premium, personalización mesas',
+          ogTitle: 'Categorías de Mesas | Imperial Hockey Dinamo',
           ogDescription:
-            'Explora nuestro catálogo de mesas de juego artesanales: dínamos personalizados, billares y juegos de mesa premium.',
+            'Catálogo completo: dínamos personalizados, billares profesionales y juegos de mesa premium con opciones de personalización.',
+          ogImage: `${BASE_URL}/assets/images/home/product-dinamos.jpg`,
+          jsonLd: {
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: 'Categorías de Mesas de Juego',
+            description: 'Catálogo de mesas: dínamos, billares y juegos de mesa premium.',
+            url: `${BASE_URL}/categorias`,
+            isPartOf: { '@type': 'WebSite', name: 'Imperial Hockey Dinamo', url: BASE_URL },
+          },
         },
       },
     ],

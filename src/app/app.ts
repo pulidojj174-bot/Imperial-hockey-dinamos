@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NgxAuroraComponent } from '@omnedia/ngx-aurora';
+import { SeoService } from './core/services/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,8 @@ import { NgxAuroraComponent } from '@omnedia/ngx-aurora';
 })
 export class App {
   protected readonly title = signal('Imperial-hockey-dinamos');
+
+  constructor() {
+    inject(SeoService).init();
+  }
 }

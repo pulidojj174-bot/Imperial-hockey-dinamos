@@ -3,17 +3,12 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs';
 
-interface SeoData {
+export interface SeoData {
   title?: string;
   description?: string;
   keywords?: string;
-  ogTitle?: string;
-  ogDescription?: string;
-  ogImage?: string;
-  ogUrl?: string;
-  ogType?: string;
-  twitterCard?: string;
-  canonicalUrl?: string;
+  image?: string;
+  type?: string;
   jsonLd?: Record<string, unknown>;
 }
 
@@ -50,34 +45,32 @@ export class SeoService {
   private updateSeo(data: SeoData): void {
     const pageTitle = data.title || SITE_NAME;
     const description = data.description || '';
-    const keywords = data.keywords || '';
-    const ogTitle = data.ogTitle || pageTitle;
-    const ogDescription = data.ogDescription || description;
-    const ogImage = data.ogImage || DEFAULT_IMAGE;
-    const currentUrl = `${BASE_URL}${this.router.url}`;
-    const ogUrl = data.ogUrl || currentUrl;
-    const ogType = data.ogType || 'website';
+    const image = data.image || DEFAULT_IMAGE;
+    const url = `${BASE_URL}${this.router.url}`;
+    const type = data.type || 'website';
 
     this.title.setTitle(pageTitle);
 
     this.meta.updateTag({ name: 'description', content: description });
-    this.meta.updateTag({ name: 'keywords', content: keywords });
+    if (data.keywords) {
+      this.meta.updateTag({ name: 'keywords', content: data.keywords });
+    }
 
-    this.meta.updateTag({ property: 'og:title', content: ogTitle });
-    this.meta.updateTag({ property: 'og:description', content: ogDescription });
-    this.meta.updateTag({ property: 'og:image', content: ogImage });
-    this.meta.updateTag({ property: 'og:url', content: ogUrl });
-    this.meta.updateTag({ property: 'og:type', content: ogType });
+    this.meta.updateTag({ property: 'og:title', content: pageTitle });
+    this.meta.updateTag({ property: 'og:description', content: description });
+    this.meta.updateTag({ property: 'og:image', content: image });
+    this.meta.updateTag({ property: 'og:url', content: url });
+    this.meta.updateTag({ property: 'og:type', content: type });
     this.meta.updateTag({ property: 'og:site_name', content: SITE_NAME });
     this.meta.updateTag({ property: 'og:locale', content: 'es_CO' });
 
-    this.meta.updateTag({ name: 'twitter:card', content: data.twitterCard || 'summary_large_image' });
-    this.meta.updateTag({ name: 'twitter:title', content: ogTitle });
-    this.meta.updateTag({ name: 'twitter:description', content: ogDescription });
-    this.meta.updateTag({ name: 'twitter:image', content: ogImage });
+    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({ name: 'twitter:title', content: pageTitle });
+    this.meta.updateTag({ name: 'twitter:description', content: description });
+    this.meta.updateTag({ name: 'twitter:image', content: image });
 
-    this.updateCanonicalUrl(data.canonicalUrl || ogUrl);
-    this.updateJsonLd(data, pageTitle, description, ogImage, ogUrl);
+    this.updateCanonicalUrl(url);
+    this.updateJsonLd(data, pageTitle, description, image, url);
   }
 
   private updateCanonicalUrl(url: string): void {
@@ -119,7 +112,7 @@ export class SeoService {
         url: BASE_URL,
         logo: {
           '@type': 'ImageObject',
-          url: `${BASE_URL}/assets/images/home/hero-1.jpg`,
+          url: DEFAULT_IMAGE,
         },
       },
     };

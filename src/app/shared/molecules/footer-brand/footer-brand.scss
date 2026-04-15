@@ -2,11 +2,15 @@
 @use '../../../../../public/assets/styles/mixins' as m;
 
 .footer-brand {
-  &__name {
-    font-family: v.$font-family-primary;
-    font-size: v.$font-size-subtitle;
-    color: v.color(accent);
-    margin: 0 0 v.$spacing-sm;
+  &__logo {
+    height: 160px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: v.$spacing-sm;
+
+    @include m.tablet() {
+      height: 192px;
+    }
   }
 
   &__description {

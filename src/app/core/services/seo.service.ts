@@ -14,6 +14,7 @@ export interface SeoData {
 
 const BASE_URL = 'https://imperial-hockey-dinamos.vercel.app';
 const DEFAULT_IMAGE = `${BASE_URL}/assets/images/home/hero-1.jpg`;
+const LOGO_IMAGE = `${BASE_URL}/assets/images/logos/IMPERIAL_HOCKEY-01.png`;
 const SITE_NAME = 'Imperial Hockey Dinamo';
 
 @Injectable({ providedIn: 'root' })
@@ -112,7 +113,7 @@ export class SeoService {
         url: BASE_URL,
         logo: {
           '@type': 'ImageObject',
-          url: DEFAULT_IMAGE,
+          url: LOGO_IMAGE,
         },
       },
     };

@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 const BASE_URL = 'https://imperial-hockey-dinamos.vercel.app';
 const DEFAULT_IMAGE = `${BASE_URL}/assets/images/home/hero-1.jpg`;
+const LOGO_IMAGE = `${BASE_URL}/assets/images/logos/IMPERIAL_HOCKEY-01.png`;
 
 export const pagesRoutes: Routes = [
   {
@@ -22,7 +23,7 @@ export const pagesRoutes: Routes = [
             '@type': 'Organization',
             name: 'Imperial Hockey Dinamo',
             url: BASE_URL,
-            logo: DEFAULT_IMAGE,
+            logo: LOGO_IMAGE,
             description: 'Fabricantes artesanales de mesas de juego de azar: dínamos, billares y juegos de mesa premium.',
             sameAs: [],
             contactPoint: {

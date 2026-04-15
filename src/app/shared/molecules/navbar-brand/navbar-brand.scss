@@ -5,24 +5,25 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  gap: v.$spacing-sm;
   z-index: v.$z-dropdown + 1;
 
-  &__name {
-    font-family: v.$font-family-primary;
-    font-size: 1.25rem;
-    color: v.color(accent);
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    transition: color v.$transitionDuration v.$transitionEasing;
+  &__logo {
+    height: 128px;
+    width: auto;
+    object-fit: contain;
+    transition: opacity v.$transitionDuration v.$transitionEasing;
 
     @include m.tablet() {
-      font-size: 1.5rem;
+      height: 160px;
+    }
+
+    @include m.desktop() {
+      height: 192px;
     }
   }
 
-  &:hover .navbar-brand__name {
-    color: v.color(gold-light);
+  &:hover .navbar-brand__logo {
+    opacity: 0.85;
   }
 
   &:focus-visible {

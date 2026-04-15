@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-footer-brand',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './footer-brand.html',
   styleUrl: './footer-brand.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

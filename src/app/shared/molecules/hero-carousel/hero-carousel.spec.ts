@@ -22,4 +22,8 @@ describe('HeroCarousel', () => {
   it('should have 3 slides', () => {
     expect(component.slides.length).toBe(3);
   });
+
+  it('should include a video slide', () => {
+    expect(component.slides.some(slide => slide.type === 'video')).toBe(true);
+  });
 });

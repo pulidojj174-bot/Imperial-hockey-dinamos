@@ -3,13 +3,13 @@
 
 .footer-brand {
   &__logo {
-    height: 160px;
+    height: 72px;
     width: auto;
     object-fit: contain;
     margin-bottom: v.$spacing-sm;
 
     @include m.tablet() {
-      height: 192px;
+      height: 80px;
     }
   }
 

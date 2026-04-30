@@ -20,19 +20,19 @@ export class HomeFeaturedProjects {
     {
       name: 'Dínamo Ejecutivo Premium',
       type: 'Dínamo',
-      image: 'assets/images/projects/proyecto-dinamo-1.jpg',
+      image: 'assets/images/projects/carpeta_2/imagen_2-1.jpeg',
       imageAlt: 'Mesa dínamo ejecutivo premium con acabado ébano y detalles dorados',
     },
     {
       name: 'Billar Clásico Imperial',
       type: 'Billar',
-      image: 'assets/images/projects/proyecto-billar-1.jpg',
+      image: 'assets/images/projects/carpeta_2/imagen_2-4.jpeg',
       imageAlt: 'Mesa de billar clásico Imperial con acabados en caoba',
     },
     {
       name: 'Mesa Póker VIP Octagonal',
       type: 'Juego de Mesa',
-      image: 'assets/images/projects/proyecto-juego-1.jpg',
+      image: 'assets/images/projects/carpeta_2/imagen_2-5.jpeg',
       imageAlt: 'Mesa de póker VIP octagonal para 8 jugadores',
     },
   ];

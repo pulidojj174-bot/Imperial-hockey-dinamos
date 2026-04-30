@@ -22,7 +22,7 @@ export class HomeProducts {
     {
       title: 'Billares',
       icon: '🎱',
-      image: 'assets/images/home/product-billares.jpg',
+      image: 'assets/images/projects/carpeta_3/imagen_3-27.png',
       imageAlt: 'Mesa de billar artesanal de Imperial Hockey Dinamo',
       description: 'Mesas de billar profesionales con maderas nobles y paños de competición.',
       featured: false,
@@ -30,7 +30,7 @@ export class HomeProducts {
     {
       title: 'Dínamos',
       icon: '⚽',
-      image: 'assets/images/home/product-dinamos.jpg',
+      image: 'assets/images/projects/carpeta_3/imagen_3-26.png',
       imageAlt: 'Mesa dínamo personalizada de Imperial Hockey Dinamo',
       description: 'Dínamos personalizados con diseño exclusivo y acabados premium.',
       featured: true,
@@ -38,7 +38,7 @@ export class HomeProducts {
     {
       title: 'Juegos de mesa',
       icon: '🎲',
-      image: 'assets/images/home/product-juegos.jpg',
+      image: 'assets/images/projects/carpeta_2/imagen_2-6.png',
       imageAlt: 'Mesa de juegos premium de Imperial Hockey Dinamo',
       description: 'Mesas multiusos para póker, dominó, ajedrez y más.',
       featured: false,

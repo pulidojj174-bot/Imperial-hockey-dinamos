@@ -25,9 +25,9 @@ export class HomeBeforeAfter {
       type: 'Dínamo',
       description:
         'De un espacio vacío a una pieza central de lujo con acabados en ébano y detalles dorados.',
-      beforeImage: 'assets/images/before-after/dinamo-before.jpg',
+      beforeImage: 'assets/images/projects/carpeta_1/imagen_1-6.jpeg',
       beforeAlt: 'Espacio antes de instalar el dínamo ejecutivo premium',
-      afterImage: 'assets/images/before-after/dinamo-after.jpg',
+      afterImage: 'assets/images/projects/carpeta_1/imagen_1-5.jpeg',
       afterAlt: 'Dínamo ejecutivo premium instalado con acabado ébano y detalles dorados',
     },
     {
@@ -35,9 +35,9 @@ export class HomeBeforeAfter {
       type: 'Billar',
       description:
         'Transformación completa: de un salón común a un espacio elegante con billar profesional.',
-      beforeImage: 'assets/images/before-after/billar-before.jpg',
+      beforeImage: 'assets/images/projects/carpeta_1/imagen_1-6.jpeg',
       beforeAlt: 'Salón antes de la instalación del billar clásico Imperial',
-      afterImage: 'assets/images/before-after/billar-after.jpg',
+      afterImage: 'assets/images/projects/carpeta_2/imagen_2-4.jpeg',
       afterAlt: 'Billar clásico Imperial instalado con acabados en caoba',
     },
     {
@@ -45,9 +45,9 @@ export class HomeBeforeAfter {
       type: 'Juego de Mesa',
       description:
         'Un rincón sin uso convertido en la sala VIP perfecta para noches de póker exclusivas.',
-      beforeImage: 'assets/images/before-after/juego-before.jpg',
+      beforeImage: 'assets/images/projects/carpeta_3/imagen_3-17.jpeg',
       beforeAlt: 'Espacio antes de instalar la mesa de póker VIP',
-      afterImage: 'assets/images/before-after/juego-after.jpg',
+      afterImage: 'assets/images/projects/carpeta_3/imagen_3-10.jpeg',
       afterAlt: 'Mesa de póker VIP octagonal instalada para 8 jugadores',
     },
   ];

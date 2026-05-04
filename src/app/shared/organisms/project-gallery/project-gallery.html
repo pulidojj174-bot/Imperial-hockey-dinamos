@@ -8,7 +8,7 @@
     />
   </div>
 
-  <div class="project-gallery__grid" appReveal>
+  <div class="project-gallery__grid">
     @for (project of filteredProjects(); track project.id) {
       <app-project-card
         [project]="project"

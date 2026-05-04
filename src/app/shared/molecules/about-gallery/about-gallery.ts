@@ -18,7 +18,7 @@ interface GalleryItem {
 export class AboutGallery {
   readonly items: GalleryItem[] = [
     {
-      src: 'assets/images/about/gallery-1.jpg',
+      src: 'assets/images/about/gallery-2.jpg',
       alt: 'Taller de fabricación de mesas dinamo de Imperial Hockey Dinamo',
       width: 600,
       height: 400,
@@ -36,7 +36,7 @@ export class AboutGallery {
       height: 400,
     },
     {
-      src: 'assets/images/about/gallery-4.jpg',
+      src: 'assets/images/about/gallery-3.jpg',
       alt: 'Mesa dinamo terminada lista para sala de juego',
       width: 600,
       height: 400,

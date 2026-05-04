@@ -16,7 +16,7 @@ export class Footer {
   readonly clubLinks: FooterLink[] = [
     { label: 'Inicio', route: '/' },
     { label: 'Proyectos', route: '/proyectos' },
-    { label: 'Categorías', route: '/categorias' },
+    /* { label: 'Categorías', route: '/categorias' }, */
   ];
 
   readonly infoLinks: FooterLink[] = [

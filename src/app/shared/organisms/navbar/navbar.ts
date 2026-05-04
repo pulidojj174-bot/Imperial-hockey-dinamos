@@ -19,7 +19,7 @@ export class Navbar {
   readonly navLinks: NavLink[] = [
     { label: 'Inicio', route: '/' },
     { label: 'Proyectos', route: '/proyectos' },
-    { label: 'Categorías', route: '/categorias' },
+    /* { label: 'Categorías', route: '/categorias' }, */
     { label: 'Nosotros', route: '/nosotros' },
     { label: 'Contacto', route: '/contacto' },
   ];
